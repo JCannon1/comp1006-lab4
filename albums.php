@@ -10,6 +10,15 @@ if (!empty($_GET['keywords'])) {
 
 <h1>Albums</h1>
 
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 <form method="get">
     <label for="keywords">Keywords:</label>
     <input name="keywords" id="keywords" value="<?php echo $keywords; ?>" />
@@ -23,6 +32,8 @@ if (!empty($_GET['keywords'])) {
     </select>
     <button class="btn btn-primary">Search</button>
 </form>
+
+<div class="fb-comments" data-href="http://comp1006-lab4.azurewebsites.net/albums.php" data-numposts="5"></div>
 
 <?php
 
@@ -110,6 +121,8 @@ session_start();
 
     // disconnect
     $conn = null;
+
+    
 /*}
 catch (exception $e) {
     mail('rich.freeman@georgiancollege.ca', 'Album Page Error', $e);
