@@ -19,8 +19,6 @@ if (!empty($_GET['keywords'])) {
 
 <h1>Albums</h1>
 
-<div class="fb-comments" data-href="http://comp1006-lab4.azurewebsites.net/albums.php" data-width="400" data-numposts="5"></div>
-
 <form method="get">
     <label for="keywords">Keywords:</label>
     <input name="keywords" id="keywords" value="<?php echo $keywords; ?>" />
@@ -132,6 +130,8 @@ catch (exception $e) {
     header('location:error.php');
 }*/
 ?>
+
+<div class="fb-comments" data-href="http://comp1006-lab4.azurewebsites.net/albums.php" data-width="400" data-numposts="5"></div>
 
 <?php require_once('footer.php');
 ob_flush(); ?>
