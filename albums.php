@@ -8,8 +8,6 @@ if (!empty($_GET['keywords'])) {
 }
 ?>
 
-<h1>Albums</h1>
-
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -18,6 +16,10 @@ if (!empty($_GET['keywords'])) {
   js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+
+<h1>Albums</h1>
+
+<div class="fb-comments" data-href="http://comp1006-lab4.azurewebsites.net/albums.php" data-width="400" data-numposts="5"></div>
 
 <form method="get">
     <label for="keywords">Keywords:</label>
@@ -33,9 +35,10 @@ if (!empty($_GET['keywords'])) {
     <button class="btn btn-primary">Search</button>
 </form>
 
-<div class="fb-comments" data-href="http://comp1006-lab4.azurewebsites.net/albums.php" data-numposts="5"></div>
+
 
 <?php
+
 
 // access current session
 session_start();
